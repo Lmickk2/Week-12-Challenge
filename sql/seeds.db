@@ -1,0 +1,18 @@
+INSERT INTO department (id,name)
+VALUES ("Software Engineering"),
+       ("Marketing"),
+       ("Internships")
+
+INSERT INTO role (id,position,salary)
+VALUES ("Senior Developer", 175000),
+       ("Software Engineer", 110000),
+       ("Marketing Associate", 72000),
+       ("Full Stack Developer.", 95000),
+       ("Intern.", 45000)
+
+INSERT INTO department (id,first_name)
+VALUES ("John D."),
+       ("Jacob S."),
+       ("Samantha J."),
+       ("Chris T."),
+       ("Victoria L.")

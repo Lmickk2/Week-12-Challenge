@@ -88,13 +88,13 @@ function addRole() {
     ([
         {
         name: "role",
-        message: "Add title of role",
+        message: "Add title of role.",
         type: "input",
         },  
         
         {
         name: "department",
-        message: "Add department of role",
+        message: "Add department of role.",
         type: "input",
         }
     ])

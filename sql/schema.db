@@ -13,9 +13,13 @@ CREATE TABLE role (
   id INT NOT NULL AUTO_INCREMENT,
   postion VARCHAR(50),
   salary INT NOT NULL,
+  department VARCHAR(50)
 );
 
 CREATE TABLE employee_name (
   id INT NOT NULL AUTO_INCREMENT,
-  first_name VARCHAR(50)
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  role VARCHAR(50),
+  department VARCHAR(50)
 );

@@ -11,8 +11,7 @@ const sql = mysql.createConnection({
 
 
 function questions() {
-
-inquirer.prompt
+    inquirer.prompt
   ({
       name: "select",
       message: "Please select an option.",
@@ -96,8 +95,22 @@ function addRole() {
         name: "department",
         message: "Add department of role.",
         type: "input",
+        },
+
+        {
+        name: "salary",
+        message: "Add salary for this role",
+        type: "input",
         }
     ])
+    .then(function(response) {
+        sql.query("INSERT INTO role (position,department,salary) VALUES (?, ?, ?)",
+        [response.title, response.department, response.salary], function(err, res) {
+            if(err) throw err
+            console.log(res)
+            questions()
+        })
+    })
 }
 
 
@@ -134,21 +147,37 @@ function addEmployee() {
         type: "input",
         }
     ])
-    
+    .then(function(response) {
+        sql.query("INSERT INTO role (first_name, last_name, id, role, department) VALUES (?, ?, ?, ?, ?)",
+        [response.first, response.last, response.id, response.role, response.department], function(err, res) {
+            if(err) throw err
+            console.log(res)
+            questions()
+        })
+    })
 }
 
 function addDepartment() {
     inquirer.prompt
-    ([
-        {
+    
+        ({
         name: "department",
         message: "Add department of role",
         type: "input",
-        }
-    ])
+        })
+    .then(function(response) {
+        sql.query("INSERT INTO department (name) VALUES (?)",
+        [response.department], function(err, res) {
+            if(err) throw err
+            console.log(res)
+            questions()
+        })
+    })
 }
 
-function quit() {
+
+
+function exit() {
     sql.end();
     process.exit();
   }

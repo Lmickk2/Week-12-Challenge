@@ -20,8 +20,8 @@
   "homepage": "https://github.com/Lmickk2/Week-12-Challenge#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "inquirer": "^9.1.4",
-    "mysql": "^2.18.1"
-  },
-  "devDependencies": {}
+    "inquirer": "^8.2.5",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3"
+  }
 }
